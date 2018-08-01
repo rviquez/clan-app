@@ -1,0 +1,31 @@
+fa-icon.donated.ng-fa-icon {
+  color: #1e90ff;
+  position: absolute;
+  top: 5px;
+  left: 28px;
+}
+
+fa-icon.received.ng-fa-icon {
+  color: #ed143d;
+  position: absolute;
+  bottom: 22px;
+  left: 28px;
+}
+.player-info {
+  cursor: pointer;
+}
+a.player-info:hover {
+   color: #e2e2e2;
+}
+.expand {
+  color: #ffffff;
+}
+.card-header{
+  background-color: #004085;
+}
+.card-body{
+  background-color: #e6e4e4;
+}
+#arena {
+  height:35px;
+}

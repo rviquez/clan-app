@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <form #f="ngForm" (ngSubmit)="search(f.value)" class="form-inline my-2 my-lg-0">
+        <input id="search" class="form-control mr-sm-2" required minlength="3" type="text" ngModel name="searchWord" #searchWord="ngModel"
+          class="form-control" placeholder="Player Tag">
+        <button class="btn btn-outline-success my-2 my-sm-0" [disabled]="f.invalid">Search</button>
+      </form>
+    </div>
+  </div>
+  <div *ngIf="player">
+    <div class="card">
+      <div class="card-header text-white">
+        <div class="row">
+          <div class="col-sm-12">
+            <a class="player-info">
+              <h4> {{ player?.name }}</h4>
+              <small>#{{ player?.tag }}</small>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-3">
+            <p>{{ player?.clan?.name }}</p>
+            <p>
+              {{ player?.clan?.role }}
+            </p>
+          </div>
+          <div class="col-sm-3">
+            <p>Level {{ player?.stats.level }}</p>
+            <p>
+              <img id="arena" [src]="image" alt="arena">
+            </p>
+          </div>
+          <div class="col-sm-3">
+            <p>
+              <img src="../../assets/images/trophy.png" alt="trophies">{{ player?.trophies }}</p>
+            <p>
+              <img src="../../assets/images/trophy-ribbon.png" alt="max trophies">{{ player?.stats.maxTrophies }}
+            </p>
+          </div>
+          <div class="col-sm-3">
+            <p>
+              <img class="icon-image" [src]="player?.stats.favoriteCard.icon" alt="favorite card">
+              <span class="card-level">{{ player?.stats.favoriteCard.maxLevel }} </span>
+            </p>
+            <p>
+              Wins: {{ player?.games.winsPercent | percent }} | Losses: {{ player?.games.lossesPercent | percent }} | Draws: {{ player?.games.drawsPercent
+              | percent }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

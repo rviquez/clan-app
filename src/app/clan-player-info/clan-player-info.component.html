@@ -1,0 +1,53 @@
+<div *ngIf="player">
+  <div class="card">
+    <div class="card-header text-white">
+      <div class="row">
+        <div class="col-sm-2">
+          <a class="player-info" (click)="goToPlayer(player?.tag)">
+            <h2>{{ player?.rank }}</h2>
+          </a>
+        </div>
+        <div class="col-sm-9">
+          <a class="player-info" (click)="goToPlayer(player?.tag)">
+            <h4> {{ player?.name }}</h4>
+            <small>#{{ player?.tag }}</small>
+          </a>
+        </div>
+        <div class="col-sm-1">
+          <button type="button" class="close" aria-label="Expand">
+            <fa-icon *ngIf="!expand" (click)="isExpanded()" [icon]="['fas', 'plus']" class="expand" size="xs"></fa-icon>
+            <fa-icon *ngIf="expand" (click)="isExpanded()" [icon]="['fas', 'minus']" class="expand" size="xs"></fa-icon>
+          </button>
+        </div>
+      </div>
+
+    </div>
+    <div *ngIf="expand" class="card-body">
+      <div class="row">
+        <div class="col-sm-4">
+          <p>{{ player?.role }}</p>
+          <p>Level {{ player?.expLevel }}</p>
+        </div>
+        <div class="col-sm-4">
+          <p>
+            <img src="../../assets/images/trophy.png" alt="trophies">{{ player?.trophies }}</p>
+          <p>
+            <img id="arena" [src]="image" alt="arena">
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <p>
+            <img src="../../assets/images/ic-cards.png" alt="donations">
+            <fa-icon class="donated" [icon]="['fas', 'arrow-up']" size="xs"></fa-icon>
+            {{ player?.donations }}
+          </p>
+          <p>
+            <img src="../../assets/images/ic-cards.png" alt="donations received">
+            <fa-icon class="received" [icon]="['fas', 'arrow-down']" size="xs"></fa-icon>
+            {{ player?.donationsReceived }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

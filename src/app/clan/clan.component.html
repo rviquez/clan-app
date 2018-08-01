@@ -1,0 +1,73 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <form #f="ngForm" (ngSubmit)="search(f.value.searchWord)" class="form-inline my-2 my-lg-0">
+        <input id="search" class="form-control mr-sm-2" required minlength="3" type="text" ngModel name="searchWord" #searchWord="ngModel"
+          class="form-control" placeholder="Clan Tag/Name">
+        <button class="btn btn-outline-success my-2 my-sm-0" [disabled]="f.invalid">Search</button>
+      </form>
+    </div>
+  </div>
+  <div *ngIf="clans">
+    <div *ngFor="let clan of clans">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2>
+            <a class="clan-info" (click)="search(clan.tag)">
+              <img [src]="clan?.badge.image" /> {{ clan?.name }}
+              <small class="text-muted">#{{ clan?.tag }}</small>
+            </a>
+          </h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <p>{{ clan?.description }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <p>{{ clan?.location.name }}</p>
+        </div>
+        <div class="col-sm-4">
+          <p>
+            <img src="../../assets/images/people.png" alt="type" srcset=""> {{ clan?.type }}
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <p>
+            <img src="../../assets/images/members.png" alt="members" srcset=""> {{ clan?.memberCount }}/50
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-4">
+          <p>
+            <img src="../../assets/images/trophy-ribbon.png" alt="trophies" srcset=""> {{ clan?.score }}
+          </p>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <p>
+            <img src="../../assets/images/trophy.png" alt="required trophies" srcset=""> {{ clan?.requiredScore }}
+          </p>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <p>
+            <img src="../../assets/images/cards.png" alt="donations" srcset=""> {{ clan?.donations }}
+          </p>
+        </div>
+      </div>
+      <div *ngIf="clans.length < 2">
+        <div class="row">
+          <div class="col-sm-12">
+            <ul class="list-group">
+              <li *ngFor="let member of clan?.members" class="list-group-item">
+                <clan-player-info [player]="member"></clan-player-info>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
