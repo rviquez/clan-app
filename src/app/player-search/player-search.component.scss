@@ -6,14 +6,6 @@ button {
   margin-left: 5px;
 }
 
-img {
-  height: 20px;
-}
-
-.icon-image {
-  height: 40px;
-}
-
 .card-header {
   background-color: #004085;
 }
@@ -25,6 +17,16 @@ img {
 .card-level {
   position: absolute;
   top: 17px;
+}
+
+img {
+  height: 20px;
+}
+.card {
+  margin-bottom: 10px;
+}
+.icon-image {
+  height: 40px;
 }
 
 #arena {

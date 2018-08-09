@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="card-header text-white">
+    <div class="row">
+      <div class="col-sm-12">
+        <h6> Next Chests</h6>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="chests" class="card-body">
+    <div class="row">
+      <ul>
+        <li *ngFor="let chest of chests?.upcoming" class="chest-list">
+          <img class="img-chest" src="../../assets/images/chests/chest-{{chest}}.png" alt="">
+        </li>
+      </ul>
+    </div>
+    <div class="row">
+      <ul>
+        <li class="chest-list">
+          <img class="img-chest" src="../../assets/images/chests/chest-supermagical.png" alt="">
+          <span class="badge badge-pill badge-info chest-amount">{{ chests?.superMagical }}</span>
+        </li>
+        <li class="chest-list">
+          <img class="img-chest" src="../../assets/images/chests/chest-magical.png" alt="">
+          <span class="badge badge-pill badge-info chest-amount">{{ chests?.magical }}</span>
+        </li>
+        <li class="chest-list">
+          <img class="img-chest" src="../../assets/images/chests/chest-legendary.png" alt="">
+          <span class="badge badge-pill badge-info chest-amount">{{ chests?.legendary }}</span>
+        </li>
+        <li class="chest-list">
+          <img class="img-chest" src="../../assets/images/chests/chest-epic.png" alt="">
+          <span class="badge badge-pill badge-info chest-amount">{{ chests?.epic }}</span>
+        </li>
+        <li class="chest-list">
+          <img class="img-chest" src="../../assets/images/chests/chest-giant.png" alt="">
+          <span class="badge badge-pill badge-info chest-amount">{{ chests?.giant }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

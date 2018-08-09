@@ -19,6 +19,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowDown, faArrowUp, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { PlayerSearchComponent } from './player-search/player-search.component';
 import { ClanPlayerInfoComponent } from './clan-player-info/clan-player-info.component';
+import { PlayerChestsComponent } from './player-chests/player-chests.component';
 
 library.add(faArrowDown, faArrowUp, faPlus, faMinus);
 
@@ -31,7 +32,8 @@ library.add(faArrowDown, faArrowUp, faPlus, faMinus);
     PlayerComponent,
     ClanComponent,
     PlayerSearchComponent,
-    ClanPlayerInfoComponent
+    ClanPlayerInfoComponent,
+    PlayerChestsComponent
   ],
   imports: [
     BrowserModule,

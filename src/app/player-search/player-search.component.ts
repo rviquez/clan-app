@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class PlayerSearchComponent implements OnInit {
   id: string;
   player: any;
+  chests: any;
   searchWord: string;
   image: string;
 
@@ -30,6 +31,8 @@ export class PlayerSearchComponent implements OnInit {
       .subscribe(playerData => {
         this.player = playerData;
         this.image = '../../assets/images/arenas/arena' + this.player.arena.arenaID + '.png';
+        this.service.getSpecific(this.player.tag + '/chests')
+          .subscribe(chests => this.chests = chests );
       });
   }
 

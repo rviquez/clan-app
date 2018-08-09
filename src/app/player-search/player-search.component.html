@@ -13,10 +13,8 @@
       <div class="card-header text-white">
         <div class="row">
           <div class="col-sm-12">
-            <a class="player-info">
-              <h4> {{ player?.name }}</h4>
-              <small>#{{ player?.tag }}</small>
-            </a>
+            <h4> {{ player?.name }}</h4>
+            <small>#{{ player?.tag }}</small>
           </div>
         </div>
       </div>
@@ -54,5 +52,6 @@
         </div>
       </div>
     </div>
+    <player-chests [playerId]="player?.tag"></player-chests>
   </div>
 </div>
