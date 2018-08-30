@@ -1,9 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import 'variables';
 @import '../node_modules/bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed');
-
 body {
-  font-family: 'Encode Sans Condensed',
-  sans-serif;
+  font-family: 'Encode Sans Condensed', sans-serif;
+}
+
+footer {
+  padding: 0 !important;
+}
+
+.donate-button {
+  float: right;
+  position: relative;
+  top: 5px;
+}
+
+.footer-nav {
+  height: 25px;
+  margin-bottom: 0;
+}
+
+.page-footer {
+  background-color: #f8f9fa;
+  color: #212529;
+  font-size: 11px;
+  width: 100%;
+  a {
+    color: #212529;
+  }
+  a:hover {
+    text-decoration: none;
+  }
 }

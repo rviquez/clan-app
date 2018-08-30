@@ -17,11 +17,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowDown, faArrowUp, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { PlayerSearchComponent } from './player-search/player-search.component';
 import { ClanPlayerInfoComponent } from './clan-player-info/clan-player-info.component';
 import { PlayerChestsComponent } from './player-chests/player-chests.component';
 
-library.add(faArrowDown, faArrowUp, faPlus, faMinus);
+library.add(faArrowDown, faArrowUp, faPlus, faMinus, faTwitter);
 
 @NgModule({
   declarations: [
